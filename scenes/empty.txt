@@ -1,0 +1,39 @@
+#pragma once
+#include "BaseScene.h"
+#include "../src/Game.h"
+
+class Name : public BaseScene
+{
+    public:
+    Name(Game* game)
+    {
+        gameManager = game;
+    }
+    void ManageInput()  override
+    {   
+        
+    };
+
+    void Render()  override
+    {       
+      
+    };  
+    
+    std::string Present() override
+    {
+        return "Entering: " + name + "...";
+    }
+
+    virtual void SwitchScene() override
+    {
+        gameManager->changeScene(new Begining(gameManager));
+    };
+
+private:
+    bool flag = true;
+    std::string name = "Name";
+    Game* gameManager;
+};
+
+
+
